@@ -1,8 +1,9 @@
 package az.millikart.boktadminpanelrestbe.controller;
 
+import az.millikart.boktadminpanelrestbe.entity.Branch;
 import az.millikart.boktadminpanelrestbe.entity.Group;
+import az.millikart.boktadminpanelrestbe.service.BranchService;
 import az.millikart.boktadminpanelrestbe.service.GroupService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,17 +11,16 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/groups")
-public class GroupController {
-    private final GroupService groupService;
+@RequestMapping("/branches")
+public class BranchController {
+    private final BranchService branchService;
 
-    public GroupController(GroupService groupService) {
-        this.groupService = groupService;
+    public BranchController(BranchService branchService) {
+        this.branchService = branchService;
     }
 
     @GetMapping("all")
-    public List<Group> list() {
-        return groupService.listAllGroups();
+    public List<Branch> list() {
+        return branchService.listAllBranches();
     }
 }
-

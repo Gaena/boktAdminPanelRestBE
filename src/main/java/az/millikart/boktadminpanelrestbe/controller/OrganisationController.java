@@ -13,7 +13,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/organisations")
 public class OrganisationController {
-    final OrganisationService organisationService;
+    private final OrganisationService organisationService;
 
     public OrganisationController(OrganisationService organisationService) {
         this.organisationService = organisationService;
