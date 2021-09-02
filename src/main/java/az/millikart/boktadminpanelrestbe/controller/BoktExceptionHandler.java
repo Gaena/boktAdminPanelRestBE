@@ -15,6 +15,7 @@ public class BoktExceptionHandler extends ResponseEntityExceptionHandler {
     public ErrorResponse handleRuntimeException(RuntimeException exception) {
         ErrorResponse errorResponse = new ErrorResponse();
         errorResponse.setMessage(exception.getClass().getSimpleName() + ":" + exception.getMessage());
+        errorResponse.setCode(103);
         return errorResponse;
     }
 
